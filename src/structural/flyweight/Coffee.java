@@ -1,14 +1,14 @@
 package structural.flyweight;
 
 public class Coffee {
-    private final CoffeeType type;
+    private final String type;
 
-    public Coffee(CoffeeType type) {
+    public Coffee(String type) {
         this.type = type;
     }
 
-    public void serveCoffee() {
-        System.out.println("Serving " + type + " coffee");
+    public String getType() {
+        return type;
     }
 }
 

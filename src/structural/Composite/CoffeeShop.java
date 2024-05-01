@@ -2,22 +2,18 @@ package structural.Composite;
 
 public class CoffeeShop {
     public static void main(String[] args) {
-        // Создаем отдельные виды кофе
-        Coffee blackCoffee = new Coffee("Black Coffee");
-        Coffee latte = new Coffee("Latte");
+        // Создаем капучино и латте с указанием цен
+        Cappuccino cappuccino = new Cappuccino(3.5);
+        Latte latte = new Latte(4.0);
 
-        // Создаем комплексный набор напитков
-        CompositeDrink combo = new CompositeDrink();
-        combo.addDrink(blackCoffee);
-        combo.addDrink(latte);
+        // Создаем композитный объект и добавляем в него капучино и латте
+        CompositeCoffee compositeCoffee = new CompositeCoffee();
+        compositeCoffee.addComponent(cappuccino);
+        compositeCoffee.addComponent(latte);
 
-        // Заказываем отдельные виды кофе
-        blackCoffee.make();
-        latte.make();
-
-        // Заказываем комплексный набор напитков
-        System.out.println("Making combo:");
-        combo.make();
+        // Получаем общую стоимость
+        double total = compositeCoffee.getPrice();
+        System.out.println("Total: $" + total);
     }
 }
 

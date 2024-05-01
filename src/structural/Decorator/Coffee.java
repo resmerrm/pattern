@@ -1,14 +1,11 @@
 package structural.Decorator;
 
-public class Coffee implements Drink {
-    @Override
+public abstract class Coffee {
+    protected String description;
+
     public String getDescription() {
-        return "Coffee";
+        return description;
     }
 
-    @Override
-    public double cost() {
-        return 2.0;
-    }
+    public abstract double cost();
 }
-

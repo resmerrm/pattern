@@ -1,14 +1,16 @@
 package structural.Bridge;
 
-
-public class Latte extends Coffee {
-    public Latte(Additive additive) {
-        super(additive);
+// Конкретная реализация для латте
+class Latte extends Coffee {
+    public Latte(CoffeeMaker coffeeMaker) {
+        super(coffeeMaker);
     }
 
     @Override
-    public void makeCoffee() {
-        System.out.println("Making Latte with " + additive.add());
+    void prepareCoffee() {
+        System.out.println("Приготовление латте:");
+        coffeeMaker.makeCoffee();
     }
 }
+
 

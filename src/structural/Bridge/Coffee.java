@@ -1,12 +1,13 @@
 package structural.Bridge;
 
-public abstract class Coffee {
-    protected Additive additive;
+abstract class Coffee {
+    protected CoffeeMaker coffeeMaker;
 
-    public Coffee(Additive additive) {
-        this.additive = additive;
+    public Coffee(CoffeeMaker coffeeMaker) {
+        this.coffeeMaker = coffeeMaker;
     }
 
-    public abstract void makeCoffee();
+    abstract void prepareCoffee();
 }
+
 

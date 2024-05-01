@@ -2,16 +2,16 @@ package structural.Adapter;
 
 public class Main {
     public static void main(String[] args) {
-        CoffeeFactoryAdapter coffeeFactoryAdapter = new CoffeeFactoryAdapter();
+        Cappuccino cappuccino = new Cappuccino();
+        Latte latte = new Latte();
 
-        // Пример использования адаптера
-        Coffee coffee1 = coffeeFactoryAdapter.getCoffee("espresso");
-        coffee1.brew();
+        CoffeeMachine cappuccinoMachine = new CappuccinoAdapter(cappuccino);
+        CoffeeMachine latteMachine = new LatteAdapter(latte);
 
-        Coffee coffee2 = coffeeFactoryAdapter.getCoffee("latte");
-        coffee2.brew();
+        System.out.println("Making Cappuccino:");
+        cappuccinoMachine.makeCoffee();
 
-        Coffee coffee3 = coffeeFactoryAdapter.getCoffee("cappuccino");
-        coffee3.brew();
+        System.out.println("\nMaking Latte:");
+        latteMachine.makeCoffee();
     }
 }

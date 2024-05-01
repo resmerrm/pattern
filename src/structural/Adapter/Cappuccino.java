@@ -1,8 +1,8 @@
 package structural.Adapter;
 
-public class Cappuccino extends Coffee {
+class Cappuccino implements Coffee {
     @Override
     public void brew() {
-        System.out.println("Brewing Cappuccino");
+        System.out.println("Brewing a delicious Cappuccino!");
     }
 }
